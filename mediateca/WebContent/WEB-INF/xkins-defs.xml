@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xkins>
+   <skin name="base" url="/skins/base" definition="/skin-definition.xml" defaultSkin="true"/>
+   <skin name="alaska" url="/skins/alaska" definition="/skin-definition.xml"/>
+   <skin name="historic" url="/skins/historic" definition="/skin-definition.xml"/>
+</xkins>

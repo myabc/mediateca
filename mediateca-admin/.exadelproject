@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FILESYSTEMS APPLICATION_NAME="mediateca-admin" ENTITY="FileSystems"
+ VERSION="7.0.3" WORKSPACE_HOME="./WebContent/WEB-INF">
+ <FILESYSTEM ENTITY="FileSystemFolder" LOCATION="%exadel.workspace%" NAME="WEB-INF"/>
+ <FILESYSTEM ENTITY="FileSystemFolder" INFO="Content-Type=Web"
+  LOCATION="%exadel.workspace%/.." NAME="WEB-ROOT"/>
+ <FILESYSTEM ENTITY="FileSystemFolder"
+  LOCATION="%exadel.workspace%/../../JavaSource" NAME="src"/>
+ <FILESYSTEM ENTITY="FileSystemFolder" LOCATION="%exadel.workspace%/lib" NAME="lib"/>
+ <FILESYSTEM ENTITY="FileSystemFolder"
+  LOCATION="%exadel.workspace%/classes" NAME="classes"/>
+ <FILESYSTEM ENTITY="FileSystemFolder"
+  LOCATION="%exadel.workspace%/../../ant" NAME="build"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-beanutils-1.6.1.jar" NAME="lib-commons-beanutils-1.6.1.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-codec-1.2.jar" NAME="lib-commons-codec-1.2.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-collections-3.0.jar" NAME="lib-commons-collections-3.0.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-digester-1.5.jar" NAME="lib-commons-digester-1.5.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-el.jar" NAME="lib-commons-el.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-fileupload-1.0.jar" NAME="lib-commons-fileupload-1.0.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-logging.jar" NAME="lib-commons-logging.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/commons-validator.jar" NAME="lib-commons-validator.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/jakarta-oro.jar" NAME="lib-jakarta-oro.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/jsp-2.0.jar" NAME="lib-jsp-2.0.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/jstl.jar" NAME="lib-jstl.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/log4j-1.2.8.jar" NAME="lib-log4j-1.2.8.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/myfaces-extensions.jar" NAME="lib-myfaces-extensions.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/myfaces-impl.jar" NAME="lib-myfaces-impl.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/myfaces-jsf-api.jar" NAME="lib-myfaces-jsf-api.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/myfaces-wap.jar" NAME="lib-myfaces-wap.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/myfaces-xdoclet.jar" NAME="lib-myfaces-xdoclet.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/myfaces.jar" NAME="lib-myfaces.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar" INFO="hidden=yes"
+  LOCATION="%exadel.workspace%/lib/tiles.jar" NAME="lib-tiles.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/activation.jar" NAME="lib-activation.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/commons-cli.jar" NAME="lib-commons-cli.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/commons-dbcp.jar" NAME="lib-commons-dbcp.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/commons-pool.jar" NAME="lib-commons-pool.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/cos.jar" NAME="lib-cos.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/dspace.jar" NAME="lib-dspace.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/handle.jar" NAME="lib-handle.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/jakarta-poi.jar" NAME="lib-jakarta-poi.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/jena.jar" NAME="lib-jena.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/lucene.jar" NAME="lib-lucene.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/mail.jar" NAME="lib-mail.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/mets.jar" NAME="lib-mets.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/oaicat.jar" NAME="lib-oaicat.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/pdfbox.jar" NAME="lib-pdfbox.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/postgresql-8.0-311.jdbc3.jar" NAME="lib-postgresql-8.0-311.jdbc3.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/tm-extractors.jar" NAME="lib-tm-extractors.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/xalan.jar" NAME="lib-xalan.jar"/>
+ <FILESYSTEM ENTITY="FileSystemJar"
+  LOCATION="%exadel.workspace%/lib/xerces.jar" NAME="lib-xerces.jar"/>
+ <WEB ENTITY="ExadelWeb" MODEL_PATH="/web.xml" SERVLET_VERSION="2.3">
+  <MODULE ENTITY="WebJSFModule" MODEL_PATH="/faces-config.xml"
+   ROOT="WEB-ROOT" SRC="src" URI="/WEB-INF/faces-config.xml"/>
+ </WEB>
+</FILESYSTEMS>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+                              "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config>
+ <component>
+  <component-type>Tabbed Pane</component-type>
+  <component-class>org.mediateca.admin.webui.UITabbedPane</component-class>
+ </component>
+ <component>
+  <component-type>XP Shell</component-type>
+  <component-class>org.mediateca.admin.webui.UIXPShell</component-class>
+ </component>
+ <managed-bean>
+  <description>Input Value Holder</description>
+  <managed-bean-name>nameBean</managed-bean-name>
+  <managed-bean-class>demo.NameBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>userName</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>tableData</managed-bean-name>
+  <managed-bean-class>org.mediateca.admin.epeople.TableData</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>itemForm</managed-bean-name>
+  <managed-bean-class>org.mediateca.admin.items.ItemForm</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>ePersonForm</managed-bean-name>
+  <managed-bean-class>org.mediateca.admin.epeople.EPersonForm</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>canLogIn</property-name>
+   <property-class>java.lang.Boolean</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>email</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>firstName</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>lastName</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>phone</property-name>
+   <property-class>java.lang.String</property-class>
+   <value/>
+  </managed-property>
+  <managed-property>
+   <property-name>requireCertificate</property-name>
+   <property-class>java.lang.Boolean</property-class>
+   <value/>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>groups</managed-bean-name>
+  <managed-bean-class>org.mediateca.admin.epeople.Groups</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <navigation-rule>
+  <from-view-id>/pages/inputname.jsp</from-view-id>
+  <navigation-case>
+   <from-outcome>greeting</from-outcome>
+   <to-view-id>/pages/greeting.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <render-kit>
+  <renderer>
+   <description>Renderer for the Tabbed Pane interface.</description>
+   <component-family>javax.faces.Command</component-family>
+   <renderer-type>TabbedPaneRenderer</renderer-type>
+   <renderer-class>org.mediateca.admin.webui.TabbedPaneRenderer</renderer-class>
+  </renderer>
+  <renderer>
+   <description>Renderer for the 'Windows-XP'-style interface</description>
+   <component-family>javax.faces.Command</component-family>
+   <renderer-type>XPShellRenderer</renderer-type>
+   <renderer-class>org.mediateca.admin.webui.XPShellRenderer</renderer-class>
+  </renderer>
+ </render-kit>
+ <lifecycle/>
+ <application>
+  <locale-config>
+   <default-locale>en_US</default-locale>
+  </locale-config>
+ </application>
+ <factory/>
+</faces-config>

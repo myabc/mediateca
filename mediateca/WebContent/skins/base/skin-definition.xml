@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin name="base">
+
+	<template name="field" group="field">
+      <content><![CDATA[ $label $input ]]></content>
+   </template>
+
+	<template name="colors">
+		<!-- TODO: The color constants should be reduced drastically
+			as 'skin' becomes more CSS-based -->
+			
+		<constant name="AHOVER"					value="ffffff"/>
+		<constant name="AHOVERBACKGROUND"		value="0000cc"/>	
+		<constant name="ALINK"					value="0000cc"/>	
+		<constant name="ALINKBACKGROUND"		value="ffffff"/>
+		<constant name="BODY"					value="000000"/>
+		<constant name="BODYBACKGROUND"			value="ffffff"/>
+		<constant name="CONTENTBACKGROUND"		value="ffffff"/>
+		<constant name="CONTROLS1"				value="ffffff"/>
+		<constant name="CONTROLS1BACKGROUND"	value="33cc00"/>
+		<constant name="CONTROLS2"				value="ffffff"/>
+		<constant name="CONTROLS2BACKGROUND"	value="33cc33"/>
+		<constant name="HEADERS"				value="003399"/>
+		<constant name="LEFTAREA"				value="000000"/>
+		<constant name="LEFTAREABACKGROUND"		value="eeeeee"/>
+		<constant name="LEFTBOX"				value="003399"/>
+		<constant name="LEFTBOXBACKGROUND"		value="ffffff"/>
+		<constant name="LEFTBOXHEAD"			value="ffffff"/>
+		<constant name="LEFTBOXHEADBACKGROUND"	value="003399"/>
+		<constant name="RESULTSCELL1"			value="efefef"/>
+		<constant name="RESULTSCELL1A"			value="efefef"/>
+		<constant name="RESULTSCELL2"			value="ffffff"/>
+		<constant name="RESULTSCELL2A"			value="ffffff"/>
+		<constant name="TABS"					value="ffffff"/>
+		<constant name="TABSBACKGROUND" 		value="333333"/>
+	</template>
+
+	<template name="fonts">
+		<constant name="BODY" 		value="Verdana,sans-serif"/>
+		<constant name="CONTROLS" 	value="Verdana,Arial,Helvetica,sans-serif"/>
+		<constant name="HEADERS" 	value="Arial,Helvetica,sans-serif"/>
+	</template>
+	
+	<!-- Renamed from HTMLFOOT in DLS v.1 -->
+	<template name="globalFooter">
+		<content><![CDATA[
+		&nbsp;
+		 ]]></content>
+	</template>
+	
+	<!-- Renamed from HTMLHEAD in DLS v.1 -->
+	<template name="globalHeader">
+		<content><![CDATA[
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td rowspan="2" width="150"><img src="http://dls.fws.gov/lib_assets/_dls/headerbanner_logos.jpg" width="150" height="130" border="0" alt="Logos of the Department of the Interior and U.S. Fish and Wildlife Service" /></td>
+	<td width="470"><img src="http://dls.fws.gov/lib_assets/_dls/headerbanner_title.gif" width="470" height="85" border="0" alt="U.S. Fish and Wildlife Service Digital Library System" /></td>
+	<td rowspan="2" width="100%" style="background-image: url(http://dls.fws.gov/lib_assets/_dls/headerbanner_bkgrnd.gif);"></td>
+</tr>
+<tr>
+	<td><img src="http://dls.fws.gov/lib_assets/_dls/headerbanner_subtitle.gif" width="470" height="45" border="0" alt="Gateway to Digital Media" /></td>
+</tr>
+</table>
+		 ]]></content>
+	</template>
+  
+	<template name="stylesheet">
+    	<content><![CDATA[
+	<link rel="stylesheet" href="skins/base/styles.css" type="text/css" />
+      ]]></content>
+      <element name="res_stylesheet" path="css" url="/formats.css"/>
+	</template>
+	
+	<template name="openBodyTag">
+		<content><![CDATA[
+		<body bgcolor="<cfoutput>###request.library.interface.colors.bodybackground#</cfoutput>"
+		text="<cfoutput>###request.library.interface.colors.body#</cfoutput>"
+		leftmargin="0" topmargin="0"
+		marginwidth="0" marginheight="0">
+		]]></content>
+	</template>
+
+	
+</skin>

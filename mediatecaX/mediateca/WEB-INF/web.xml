@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE web-app PUBLIC
+  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+  "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <context-param>
+    <param-name>com.sun.faces.validateXml</param-name>
+    <param-value>true</param-value>
+    <description>
+      Set this flag to true if you want the JavaServer Faces
+      Reference Implementation to validate the XML in your
+      faces-config.xml resources against the DTD. Default
+      value is false.
+    </description>
+  </context-param>
+
+  <!-- Tiles Servlet -->
+  <servlet>
+     <servlet-name>Tiles Servlet</servlet-name>
+     <servlet-class>org.apache.struts.tiles.TilesServlet</servlet-class>
+     <init-param>
+        <param-name>definitions-config</param-name>
+	<param-value>/WEB-INF/tiles.xml</param-value>
+     </init-param>
+     <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <!-- Faces Servlet -->
+  <servlet>
+     <servlet-name>Faces Servlet</servlet-name>
+     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+     <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <!-- Faces Servlet Mapping. 
+       This mapping identifies a jsp page as having JSF content.  If a
+       request comes to the server for foo.faces, the container will
+       send the request to the FacesServlet, which will expect a
+       corresponding foo.jsp page to exist containing the content.
+  -->
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.faces</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <!-- Disallow direct access to the JSP pages that are
+       used for JSF. You must add a <url-pattern> entry
+       for each JSP page that corresponds to a faces page.
+  -->
+  <security-constraint>
+    <display-name>
+      Prevent access to raw JSP pages that are for JSF pages.
+    </display-name>
+    <web-resource-collection>
+      <web-resource-name>Raw-JSF-JSP-Pages</web-resource-name>
+      <!-- Add url-pattern for EACH raw JSP page -->
+	  <url-pattern>/welcome.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <description>No roles, so no direct access</description>
+    </auth-constraint>
+  </security-constraint>
+  
+</web-app>

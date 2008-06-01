@@ -1,0 +1,7 @@
+Mediateca attempts to keep as much of the DSpace directory structure as possible.  JSP files are maintained in the /jsp directory.  Java source files are organized in the /src file in the same way.
+
+Where does it separate out from JSP?
+
+The view layer of the application is very different in that it uses Jakarta struts as a framework.
+
+More information coming soon in this README file.

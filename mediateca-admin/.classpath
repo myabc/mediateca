@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JavaSource"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.5.0_03"/>
+	<classpathentry kind="con" path="com.ibm.wtp.server.java.core.container/com.ibm.wtp.server.tomcat.runtimeTarget.v50/6_21_05_10_11_AM0"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-beanutils-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-codec-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-collections-3.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-digester-1.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-validator.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jakarta-oro.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/myfaces-extensions.jar"/>
+	<classpathentry sourcepath="WebContent/WEB-INF/lib/myfaces-impl.jar" kind="lib" path="WebContent/WEB-INF/lib/myfaces-impl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/myfaces-jsf-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/myfaces-wap.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/myfaces-xdoclet.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/myfaces.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tiles.jar"/>
+	<classpathentry kind="var" path="JSFSTUDIO_LIB_HOME/servlet/2.3/servlet.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/dspace.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-8.0-311.jdbc3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jakarta-poi.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/PDFBox.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/handle.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lucene.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-cli.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tm-extractors.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xerces.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xalan.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/oaicat.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mets.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cos.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jena.jar"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
+</classpath>

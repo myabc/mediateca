@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+                                   "http://jakarta.apache.org/struts/dtds/tiles-config.dtd">
+<tiles-definitions>
+
+ <!-- ================ -->
+ <!-- Base definitions -->
+ <!-- ================ -->
+ 
+ <!-- Default Layout: used for everything, except
+      compact pop-up windows -->
+ <definition name=".defaultLayout" path="/pages/common/layout/defaultLayout.jsp">
+  <put name="header" value=".defaultPage.header"/>
+  <put name="footer" value=".defaultPage.footer"/>
+  <put name="menu" value=".defaultPage.menu"/>
+  <put name="body" value=".defaultPage.body"/>
+ </definition>
+
+ <definition name=".defaultPage.header" path="/pages/common/header.jsp"/>
+ <definition name=".defaultPage.menu" path="/pages/common/menu.jsp"/>
+ <definition name=".defaultPage.footer" path="/pages/common/footer.jsp"/>
+ <definition name=".defaultPage.body" path="/pages/common/example-body.jsp"/>
+ 
+ <!-- ================ -->
+ <!-- Page definitions -->
+ <!-- ================ -->
+ 
+ <!-- Home Tile -->
+ <definition extends=".defaultLayout" name="home">
+  <put name="body" value="/pages/home.jsp"/>
+ </definition>
+
+ <!-- Help Tiles -->
+ <definition extends=".defaultLayout" name=".help">
+  <put name="body" value="/pages/help/helpHome.jsp"/>
+ </definition>
+
+ <!-- Browse Tiles -->
+ <definition name=".browse.authors" extends=".defaultLayout">
+  <put name="body" value="/pages/browse/authors.jsp"/>
+ </definition>
+ 
+ <definition name=".browse.title" extends=".defaultLayout">
+  <put name="body" value="/pages/browse/items-by-title.jsp"/>
+ </definition>
+ 
+ <!-- Search Tiles -->
+ <definition extends=".defaultLayout" name="advancedSearch">
+  <put name="body" value="/pages/advanced-search.jsp"/>
+ </definition>
+
+ <definition extends=".defaultLayout" name="searchResults">
+  <put name="body" value="/pagess/search/results.jsp"/>
+ </definition>
+
+</tiles-definitions>

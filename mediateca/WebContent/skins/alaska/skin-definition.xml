@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin name="alaska" extends="base">
+	<template name="stylesheet">
+    	<content><![CDATA[
+	<link rel="stylesheet" href="skins/alaska/styles.css" type="text/css" />
+      ]]></content>
+      <element name="res_stylesheet" path="css" url="/formats.css"/>
+	</template>
+
+	<!-- Renamed from HTMLFOOT in DLS v.1 -->
+	<template name="globalFooter">
+		<content><![CDATA[
+		&nbsp;
+		 ]]></content>
+	</template>
+	
+	<!-- Renamed from HTMLHEAD in DLS v.1 -->
+	<template name="globalHeader">
+		<content><![CDATA[
+<table width="710" cellspacing="0" cellpadding="0">
+	<tr>
+		<td><img src="http://images.fws.gov/lib_assets/r7/logopair.jpg" width="169" height="85" border="0"
+		alt="DOI and USFWS logos" usemap="#logolinks" /></td><td>
+		<td><img src="http://images.fws.gov/lib_assets/r7/title.gif" width="449" height="85" border="0" alt="U.S. Fish & Wildlife Service Alaska Image Library"></td>
+	</tr>
+</table>
+		 ]]></content>
+	</template>
+
+</skin>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<websettings version="601">
+<webcontent>WebContent</webcontent>
+<context-root>mediateca-admin</context-root>
+<project-type>J2EE</project-type>
+<jsp-level>1.3</jsp-level>
+</websettings>

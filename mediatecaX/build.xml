@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Mediateca Build File
+
+Copyright (c) Mondiale Digital 2005.
+
+OPEN SOURCE
+Released under Berkley Software Distribution License.
+
+-->
+<project name="Mediateca" basedir="." default="install">
+  
+   <description>
+   Mediateca Build File
+   A full description of Mediateca's build file will go here
+   </description>
+
+   <property file="build.properties"/>
+<!--   <property name="app" value="mediateca"/>-->
+   <property name="appdir" value="${basedir}/${app}"/>
+   <property name="builddir" value="${appdir}/build"/>
+   <basename property="appname" file="${appdir}"/>
+   <property name="warfile" value="${builddir}/${appname}.war"/>
+      
+    <path id="classpath">
+      <pathelement location="${servlet.api.jar}"/>
+      <pathelement location="${jsp.api.jar}"/>
+      <fileset dir="${builddir}/WEB-INF/lib">
+         <include name="*.jar"/>
+      </fileset>   
+   </path>
+   
+   <target name="init">
+      <tstamp/>
+      <fail unless="app" message="Run ant -Dapp=..."/>
+   </target>
+   
+   <target name="prepare" depends="init"
+      description="Create build directory.">
+      <mkdir dir="${builddir}"/>
+   </target>
+   
+   <target name="copy" depends="prepare"
+      description="Copy files to build directory.">
+      <copy todir="${builddir}">
+         <fileset dir="${appdir}">
+            <exclude name="**/*.java"/>
+            <exclude name="build/**"/>
+            <!-- for Eclipse -->
+            <exclude name="bin/**"/>
+            <exclude name=".*"/>
+         </fileset>
+      </copy>
+      <copy todir="${builddir}/WEB-INF/lib">
+<!--         <fileset dir="${jsf.lib.dir}" includes="${jsf.libs}"/>-->
+         <fileset dir="${jstl.lib.dir}" includes="${jstl.libs}"/>
+         <fileset dir="${commons.lib.dir}" includes="${commons.libs}"/>
+      </copy>
+   </target>
+   
+   <target name="compile" description="Compile the source code"
+      depends="copy">
+      <mkdir dir="build/classes"/>
+    
+      
+      <javac 
+         srcdir="${appdir}/WEB-INF/classes" 
+         destdir="${builddir}/WEB-INF/classes"
+         debug="true"
+         deprecation="true">
+         <include name="**/*.java"/>
+         <classpath refid="classpath"/> 
+     
+      </javac>
+   </target>
+
+
+
+   <target name="war" depends="compile"
+      description="Build a WAR file.">
+      <delete file="${warfile}"/>
+      <jar jarfile="${warfile}" basedir="${builddir}"/>
+   </target>
+
+   <target name="install" depends="war">
+      <echo>
+      </echo>
+      <copy file="${warfile}" todir="${tomcat.dir}/webapps"/>
+   </target>
+   
+   <target name="clean" depends="init"
+      description="Clean everything.">
+      <delete dir="${builddir}"/>
+      <!-- for Eclipse -->
+      <delete dir="${appdir}/bin"/>
+   </target>
+
+</project>

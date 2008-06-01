@@ -1,0 +1,114 @@
+<project name="mediateca-admin" basedir="../" default="deploy">
+
+    <!-- Project settings -->
+    <property name="project.distname" value="mediateca-admin"/>
+
+    <!-- define your folder for deployment -->
+    <property name="deploy.dir" value="deploy"/>
+
+
+    <!-- Local system paths -->
+    <property file="${basedir}/ant/build.properties"/>
+    <property name="webroot.dir" value="${basedir}/WebContent"/>
+    <property name="webinf.dir" value="${webroot.dir}/WEB-INF"/>
+    <property name="build.dir" value="build"/>
+
+
+    <!-- classpath for JSF 1.0 -->
+    <path id="compile.classpath">
+        <!--<pathelement path ="${webinf.dir}/lib/commons-beanutils.jar"/>
+        <pathelement path ="${webinf.dir}/lib/commons-collections.jar"/>
+        <pathelement path ="${webinf.dir}/lib/commons-digester.jar"/>
+        <pathelement path ="${webinf.dir}/lib/commons-logging.jar"/>
+		<pathelement path ="${webinf.dir}/lib/myfaces-extensions.jar"/>
+        <pathelement path ="${webinf.dir}/lib/myfaces-impl.jar"/>
+    	<pathelement path ="${webinf.dir}/lib/myfaces-jsf-api.jar"/>
+    	<pathelement path ="${webinf.dir}/lib/myfaces.jar"/>
+    	<pathelement path ="${webinf.dir}/lib/jstl.jar"/>
+        <pathelement path ="${webinf.dir}/lib/standard.jar"/>
+        <pathelement path ="${webinf.dir}/lib/dspace.jar"/>-->
+    	<fileset dir="${webinf.dir}/lib">
+    	    <include name="**/*.jar"/>
+    	</fileset>
+        <pathelement path ="${webinf.dir}/classes"/>
+        <pathelement path ="${classpath.external}"/>
+        <pathelement path ="${classpath}"/>
+    	
+    	
+    	
+    </path>
+    <!-- Check timestamp on files -->
+    <target name="prepare">
+        <tstamp/>
+    </target>
+
+    <!-- Copy any resource or configuration files -->
+    <target name="resources">
+        <copy todir="${webinf.dir}/classes" includeEmptyDirs="no">
+            <fileset dir="JavaSource">
+            <patternset>
+                <include name="**/*.conf"/>
+                <include name="**/*.properties"/>
+                <include name="**/*.xml"/>
+            </patternset>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Normal build of application -->
+    <target name="compile" depends="prepare,resources">
+        <javac srcdir="JavaSource" destdir="${webinf.dir}/classes">
+            <classpath refid="compile.classpath"/>
+        </javac>
+    </target>
+
+    <!-- Remove classes directory for clean build -->
+    <target name="clean"
+      description="Prepare for clean build">
+      <delete dir="${webinf.dir}/classes"/>
+      <mkdir  dir="${webinf.dir}/classes"/>
+    </target>
+
+    <!-- Build entire project -->
+    <target name="build" depends="prepare,compile"/>
+    <target name="rebuild" depends="clean,prepare,compile"/>
+
+    <!-- Create binary distribution -->
+    <target name="war" depends="build">
+      <mkdir dir="${build.dir}"/>
+      <war
+        basedir="${webroot.dir}"
+        warfile="${build.dir}/${project.distname}.war"
+        webxml="${webinf.dir}/web.xml">
+        <exclude name="WEB-INF/${build.dir}/**"/>
+        <exclude name="WEB-INF/src/**"/>
+        <exclude name="WEB-INF/web.xml"/>
+       </war>
+
+    </target>
+
+    <target name="deploy" depends="war">
+       <delete file="${deploy.dir}/${project.distname}.war"/>
+       <delete dir="${deploy.dir}/${project.distname}"/>
+       <copy file="${build.dir}/${project.distname}.war" todir="${deploy.dir}"/>
+    </target>
+
+	<target name="javadoc"
+	        description="Create the mediateca public API documentation with javadoc">
+	   <mkdir dir="${build.dir}/javadoc" />
+	   <javadoc
+	            windowtitle="Mediateca Source Javadoc" destdir="${build.dir}/javadoc"
+	            overview="JavaSource/overview.html"
+	            classpathref="compile.classpath"
+	            doctitle="Mediateca Source Javadoc"
+	            author="true"
+	            bottom="Copyright &#169; 2005 U.S. Fish &amp; Wildlife Service. All Rights Reserved."
+	            version="true">
+	      <packageset dir="JavaSource">
+	        <include name="**" />
+	      </packageset>
+	   </javadoc>
+	 </target>
+	
+	
+</project>

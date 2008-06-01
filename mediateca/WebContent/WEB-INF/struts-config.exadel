@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0" PATH="home"
+  SHAPE="592,272,50,40" SUBTYPE="tile" TITLE="home" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/Search.do" TARGET="action0" TITLE="Search.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#home" NAME="action1"
+  PATH="/home" SHAPE="368,272,100,41" SUBTYPE="forward" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action1"
+   PATH="home" TARGET="page0" TITLE="forward" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  PATH="/pages/home.jsp" SHAPE="240,384,50,40" SUBTYPE="jsp"
+  TITLE="home.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/do/Search" SUBTYPE="confirmed" TARGET="action0"
+   TITLE="/do/Search" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="home" NAME="forward0"
+  PATH="/do/home" SHAPE="160,272,71,21" TARGET="action1" TITLE="home" TYPE="forward"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#Search" NAME="action0"
+  PATH="/Search" SHAPE="408,416,106,57" TITLE="searchForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="searchResults" TARGET="page4" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="failure"
+   NAME="forward1" PATH="home" TARGET="page0" TITLE="failure" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  PATH="/results.jsp" SHAPE="120,408,50,25" SUBTYPE="jsp"
+  TITLE="results.jsp" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="help" NAME="forward1"
+  PATH="/do/help" SHAPE="160,56,63,21" TARGET="action2" TITLE="help" TYPE="forward"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3" PATH=".help"
+  SHAPE="592,72,50,25" SUBTYPE="tile" TITLE="help" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#help" NAME="action2"
+  PATH="/help" SHAPE="368,56,0,0" SUBTYPE="forward" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action2"
+   PATH=".help" TARGET="page3" TITLE="forward" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#ChangeLocale"
+  NAME="action3" PATH="/ChangeLocale" SHAPE="88,576,104,25"
+  TITLE="LocaleForm" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  PATH="searchResults" SHAPE="648,416,50,25" SUBTYPE="tile"
+  TITLE="searchResults" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5"
+  PATH="advancedSearch" SHAPE="592,136,50,25" SUBTYPE="tile"
+  TITLE="advancedSearch" TYPE="page"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#advanced-search"
+  NAME="action4" PATH="/advanced-search" SHAPE="368,136,100,41"
+  SUBTYPE="forward" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action4"
+   PATH="advancedSearch" TARGET="page5" TITLE="forward" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="advanced-search"
+  NAME="forward2" PATH="/do/advanced-search" SHAPE="160,136,133,21"
+  TARGET="action4" TITLE="advanced-search" TYPE="forward"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#browse#recent"
+  NAME="action5" PATH="/browse/recent" SHAPE="384,544,100,41"
+  SUBTYPE="forward" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action5"
+   PATH="/do/browse/date?" SHAPE="483,568,544,568,544,576,575,576"
+   TARGET="action7" TITLE="forward" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#ChangeSkin"
+  NAME="action6" PATH="/ChangeSkin" SHAPE="88,528,100,25"
+  TITLE="SkinForm" TYPE="action"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#browse#date"
+  NAME="action7" PATH="/browse/date" SHAPE="576,568,100,25"
+  SUBTYPE="unknown" TYPE="action"/>
+</PROCESS>

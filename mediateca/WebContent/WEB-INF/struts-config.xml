@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+                               "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+ <data-sources/>
+ <form-beans>
+  <form-bean name="searchForm" type="org.mediateca.formbeans.SearchForm"/>
+  <form-bean name="LocaleForm" type="org.apache.struts.action.DynaActionForm">
+   <form-property name="language" type="java.lang.String"/>
+   <form-property name="country" type="java.lang.String"/>
+   <form-property name="variant" type="java.lang.String"/>
+   <form-property name="page" type="java.lang.String"/>
+  </form-bean>
+  <form-bean name="SkinForm" type="org.apache.struts.action.DynaActionForm">
+   <form-property name="skin" type="java.lang.String"/>
+   <form-property name="page" type="java.lang.String"/>
+  </form-bean>
+ </form-beans>
+
+ <!-- Global Exception -->
+ <global-exceptions>
+ 
+ </global-exceptions> 
+
+<!-- Global Forwards -->
+ <global-forwards>
+  <forward name="home" path="/do/home"/>
+  <forward contextRelative="true" name="help" path="/do/help"/>
+  <forward name="advanced-search" path="/do/advanced-search"/>
+ </global-forwards>
+ <action-mappings>
+  <action forward="home" path="/home"/>
+  <action input="home" name="searchForm" path="/Search" type="org.mediateca.formbeans.SearchAction">
+   <forward name="success" path="searchResults"/>
+   <forward name="failure" path="home"/>
+  </action>
+  <action forward=".help" path="/help">
+   <forward name="help" path="help"/>
+  </action>
+  <action name="LocaleForm" path="/ChangeLocale" scope="request" type="org.mediateca.webui.ChangeLocaleAction"/>
+  <action name="SkinForm" path="/ChangeSkin" scope="request" type="org.mediateca.webui.ChangeSkinAction"/>
+  <action forward="advancedSearch" path="/advanced-search"/>
+  <!-- 
+	 	Browse Actions: 
+	 	- Recent	(forwards to Date)
+	 	- Subject
+	 	- Title
+	 	- Creator (referred to as Author in DSpace)
+	 	- Date
+	 -->
+  <action forward="/do/browse/date?" path="/browse/recent"/>
+  
+  
+  
+ </action-mappings>
+ <controller/>
+ <message-resources parameter="org.mediateca.resources.ApplicationResources"/>
+ <plug-in className="org.apache.struts.tiles.TilesPlugin">
+  <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+  <set-property property="moduleAware" value="true"/>
+ </plug-in>
+ <plug-in className="ar.com.koalas.xkins.struts.XkinsPlugin">
+  <set-property property="config" value="/WEB-INF/xkins-defs.xml"/>
+  <set-property property="autoReload" value="2000"/>
+  <set-property property="skinType" value="base"/>
+ </plug-in>
+ <plug-in className="org.mediateca.webui.CustomizableUIPlugIn">
+  <set-property property="contextKey" value="customizableUI"/>
+ </plug-in>
+</struts-config>
